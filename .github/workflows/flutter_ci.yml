@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     name: Build & Test Flutter App
-    runs-on: macos
+    runs-on: macos-latest
 
     steps:
       # 1️⃣ Checkout code
