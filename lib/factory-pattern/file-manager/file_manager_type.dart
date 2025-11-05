@@ -1,0 +1,1 @@
+enum FileManagerType{local,remote,cloud}

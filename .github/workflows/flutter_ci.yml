@@ -1,0 +1,57 @@
+name: Flutter CI/CD
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+jobs:
+  build:
+    name: Build & Test Flutter App
+    runs-on: macos
+
+    steps:
+      # 1️⃣ Checkout code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # 2️⃣ Setup Flutter
+      - name: Setup flutter SDK
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.8.1'
+          channel: 'stable'
+
+      # 3️⃣ Cache Flutter dependencies
+      - name: Cache pub dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.pub-cache
+          key: ${{ runner.os }}-pub-${{ hashFiles('pubspec.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pub-
+
+      # 4️⃣ Install dependencies
+      - name: Install dependencies
+        run: flutter pub get
+
+      # 5️⃣ Analyze (lint)
+      - name: Analyze code
+        run: flutter analyze
+
+      # 6️⃣ Run tests
+      - name: Run test
+        run: flutter test --coverage
+
+      # 7️⃣ Build Android APK (Release)
+      - name: Build android apk
+        run: flutter build apk --release
+
+      # 8️⃣ Upload build artifact
+      - name: Upload APK artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: flutter-todo-release-apk
+          path: build/app/outputs/flutter-apk/app-release.apk
+

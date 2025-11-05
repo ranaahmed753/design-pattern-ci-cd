@@ -1,0 +1,1 @@
+Purpose: Ensure only one instance of a class exists throughout the app (e.g., Database, API client, SharedPreferences).
