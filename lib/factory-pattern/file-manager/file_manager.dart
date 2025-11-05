@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+
 abstract class FileManager {
   void saveFile();
 
@@ -9,50 +11,50 @@ abstract class FileManager {
 class LocalFileManager implements FileManager {
   @override
   void downloadFile() {
-    print("downloaded local file");
+    debugPrint("downloaded local file");
   }
 
   @override
   void extractFile() {
-    print("extracted local file");
+    debugPrint("extracted local file");
   }
 
   @override
   void saveFile() {
-    print("saved local file");
+    debugPrint("saved local file");
   }
 }
 
 class RemoteFileManager implements FileManager {
   @override
   void downloadFile() {
-    print("downloaded remote file");
+    debugPrint("downloaded remote file");
   }
 
   @override
   void extractFile() {
-    print("extracted remote file");
+    debugPrint("extracted remote file");
   }
 
   @override
   void saveFile() {
-    print("saved remote file");
+    debugPrint("saved remote file");
   }
 }
 
 class CloudFileManager implements FileManager {
   @override
   void downloadFile() {
-    print("downloaded cloud file");
+    debugPrint("downloaded cloud file");
   }
 
   @override
   void extractFile() {
-    print("extracted cloud file");
+    debugPrint("extracted cloud file");
   }
 
   @override
   void saveFile() {
-    print("saved cloud file");
+    debugPrint("saved cloud file");
   }
 }

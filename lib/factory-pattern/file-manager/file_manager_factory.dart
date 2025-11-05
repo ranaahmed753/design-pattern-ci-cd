@@ -7,7 +7,6 @@ class FileManagerFactory{
       case FileManagerType.local: return LocalFileManager();
       case FileManagerType.remote: return RemoteFileManager();
       case FileManagerType.cloud: return CloudFileManager();
-      default: throw Exception("Nothing matched type");
     }
   }
 }

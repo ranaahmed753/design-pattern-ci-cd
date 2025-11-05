@@ -1,7 +1,8 @@
 import 'package:design_pattern/observer-pattern/auth/auth_observer.dart';
 
 class AuthManager{
-  List<AuthObserver> _observers = [];
+  //auth manager
+  final List<AuthObserver> _observers = [];
   bool _isloggedIn = false;
   void addObserver(AuthObserver observer) => _observers.add(observer);
   void removeObserver(AuthObserver observer) => _observers.remove(observer);

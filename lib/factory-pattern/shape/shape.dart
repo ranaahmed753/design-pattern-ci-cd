@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+
 abstract class Shape{
   void draw();
 }
@@ -5,18 +7,18 @@ abstract class Shape{
 class Circle implements Shape{
   @override
   void draw() {
-    print("Drawing circle");
+    debugPrint("Drawing circle");
   }
 }
 class Square implements Shape{
   @override
   void draw() {
-    print("Drawing square");
+    debugPrint("Drawing square");
   }
 }
 class Triangle implements Shape{
   @override
   void draw() {
-    print("Drawing triangle");
+    debugPrint("Drawing triangle");
   }
 }

@@ -10,7 +10,7 @@ void main() {
   final as1 = ApiService.instance;
   final as2 = ApiService.instance;
   ShapeEntryPoint.init();
-  print("api service matching: ${as1 == as2}");
+  debugPrint("api service matching: ${as1 == as2}");
   FileManagerEntryPoint.init();
   WeatherStationEntryPoint.init();
   AuthEntryPoint.init();

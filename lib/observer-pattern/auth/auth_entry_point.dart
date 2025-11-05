@@ -7,7 +7,7 @@ class AuthEntryPoint{
     final authManager = AuthManager();
     final home = HomeScreen();
     final checkout = CheckoutScreen();
-    //authManager.addObserver(home);
+    authManager.addObserver(home);
     authManager.addObserver(checkout);
     authManager.login();
   }

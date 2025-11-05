@@ -10,8 +10,6 @@ class ShapeFactory {
         return Square();
       case ShapeType.triangle:
         return Triangle();
-      default:
-        throw Exception("Invalid shape type");
     }
   }
 }
